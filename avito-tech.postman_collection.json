@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "2aeda9d8-fc46-4a7e-9857-f5b31e4a8d29",
+		"name": "avito-tech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18755172"
+	},
+	"item": [
+		{
+			"name": "getAllAcconts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/get/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"get",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAccountByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/get/balance/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"get",
+						"balance",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"receiver_id\": 2,\r\n        \"sender_id\": 1,\r\n        \"amount\": 20,\r\n        \"comment\": \"You paid for me in a restaurant\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/transaction",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "changeBalance",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"account_id\": 1,\r\n        \"amount\": 222.55,\r\n        \"comment\": \"Credit payment\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/changeBalance",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"changeBalance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBalanceByIDInCurrency",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/get/balance/USD/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"get",
+						"balance",
+						"USD",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTransactionsByBccountID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"account_id\": 1, \r\n    \"limit\":0,\r\n    \"offset\": 0, \r\n    \"order_by\" : \"date_time DESC\"  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/get/transactions",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"get",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
