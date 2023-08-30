@@ -1,4 +1,4 @@
-# avito-tech
+# tech
 1. Start app in docker 
 `docker-compose up --build`
 
